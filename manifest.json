@@ -1,0 +1,41 @@
+{
+    "name": "Salesforce Limits Monitor",
+    "description": "Salesforce Limits Monitor",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "cookies"
+    ],
+    "action": {
+        "default_icon": "resources/icon16.png" 
+    }, 
+    "action": {
+        "default_popup": "popup.html"
+    }, "background": {
+        "service_worker": "background.js"
+      },
+      "host_permissions": [
+        "https://*.salesforce.com/*",
+        "https://*.force.com/*",
+        "https://*.cloudforce.com/*",
+        "https://*.visualforce.com/*"
+      ],
+    "icons": {
+        "16": "resources/icon16.png",
+        "32": "resources/icon32.png",
+        "48": "resources/icon48.png",
+        "128": "resources/icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.lightning.force.com/*"],
+            "js": ["modal-index.js"]
+        }
+    ],  
+    "web_accessible_resources": [{
+        "resources": ["resources/*.png","resources/*.svg","resources/*.gif"],
+        "matches": ["https://*.lightning.force.com/*","https://*/*"]
+    }]
+    
+}

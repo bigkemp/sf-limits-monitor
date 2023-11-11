@@ -1,0 +1,12 @@
+.loading_screen{
+    width: 100%;
+    height: 100%;
+    background: #36363682;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    font-size: xx-large;
+    padding: 25%;
+    display: none;
+    position: absolute;
+}
